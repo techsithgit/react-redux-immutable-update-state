@@ -18,14 +18,14 @@ const reducer = (state = initialState, action) => {
     case "AGE_DOWN":
       return {
         ...state,
-        age: state.age + action.value,
-        history: state.history.concat({ id: Math.random(), age: state.age + action.value })
+        age: state.age - action.value,
+        history: state.history.concat({ id: Math.random(), age: state.age - action.value })
       };
       break;
     case "DEL_ENTRY":
       return {
         ...state,
-        history: newState.history.filter((el)=> el.id !== action.id )
+        history: newState.history.filter((el) => el.id !== action.id)
       }
       break;
   }
